@@ -1,23 +1,18 @@
 import React from 'react';
-import './App.css'; 
-import GetImgs from './pages/imgs/imgs';
-import Character from './pages/character/character';
-import DetailedPage from './pages/detailedPage/detailedPage';
+import {Routes, Route} from "react-router-dom";
+import CharacterList from "./pages/CharacterList/CharacterList";
+import DetailInfo from "./pages/DetailInfo/DetailInfo";
+import './App.css'
 
-import { Route, Routes } from 'react-router-dom';
-
-
-function App() {
-
-  return (
-    <div className="App">
-    <Routes>
-      <Route exact path='/' element={<GetImgs/>}/>
-      <Route exact path='/Character' element={<Character/>}/>
-      <Route exact path='/hero/:id' element={<DetailedPage/>}/>
-    </Routes>
-    </div>
-  );
-}
+const App = () => {
+    return (
+        <div className='App'>
+            <Routes>
+                <Route exact path={'/'}  element={<CharacterList />}/>
+                <Route exact path={'/detail'}  element={<DetailInfo />}/>
+            </Routes>
+        </div>
+    );
+};
 
 export default App;
